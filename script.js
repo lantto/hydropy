@@ -230,9 +230,7 @@ const gameLoop = () => {
 }
 
 const updateLava = (lavaTile, now) => {
-    let timeout = lava.length < 200 ? lavaTile.timeout : Math.max(lavaTile.timeout - lava.length, 100);
-
-    if (now - lavaTile.lastSpread > timeout) {
+    if (now - lavaTile.lastSpread > lavaTile.timeout) {
         lavaTile.lastSpread = now;
         if (lavaTile.state === 1) {
             lavaTile.state = 2;
@@ -304,7 +302,7 @@ const spreadLava = (x, y) => {
         } else if (![13, 14, 18, 19, 20].includes(tile)) {
             map[y + pos.y][x + pos.x] = 18; // Lava
             drawTile(x + pos.x, y + pos.y, 18);
-            lava.push({x: x + pos.x - origin.x, y: y + pos.y - origin.y, lastSpread: Date.now(), state: 3, timeout: getRandomIntInclusive(100, 3000)});
+            lava.push({x: x + pos.x - origin.x, y: y + pos.y - origin.y, lastSpread: Date.now(), state: 3, timeout: getRandomIntInclusive(100, 2000)});
         }
     });
 }
