@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #129205;
+    overscroll-behavior: none;
+    position: fixed;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a { 
+    text-decoration: none;
+    color: rgb(233, 236, 22);
+}
+
+.btn {
+    padding: 10px;
+    border: 1px solid rgb(233, 236, 22);
+    display: block;
+}
+
+button {
+    position: fixed;
+    width: 200px;
+    height: 50px;
+    bottom: 3%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -100px;
+}
+
+canvas {
+    background-color: #129205;
+    transition: opacity 2s;
+}
+
+#instructions {
+    user-select: none;
+    transition: opacity 2s;
+}
+
+#instructions, #score {
+    position: fixed;
+    max-width: 80vw;
+    width: 500px;
+    text-align: center;
+    right: 0;
+    left: 0;
+    top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #000;
+    border: 1px solid rgb(233, 236, 22);
+    color: #ededed;
+}
+
