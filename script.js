@@ -272,7 +272,13 @@ const spreadLava = (x, y) => {
         {x: 0, y: 1},
         {x: -1, y: 0}
     ].forEach(pos => {
-        if (!map[y + pos.y] || map[y + pos.y][x + pos.x] === undefined) {
+        if ((!map[y + pos.y] || map[y + pos.y][x + pos.x] === undefined)
+            || (x + pos.x < origin.x - (((innerWidth / scale) / SPRITE_SIZE) / 2)
+                || y + pos.y < origin.y - (((innerHeight / scale) / SPRITE_SIZE) / 2)
+                || x + pos.x > origin.x + (((innerWidth / scale) / SPRITE_SIZE) / 2)
+                || y + pos.y > origin.y + (((innerHeight / scale) / SPRITE_SIZE) / 2)
+            )
+        ) {
             gameOver = true;
             setTimeout(() => {
                 canvas.style.opacity = 0;
