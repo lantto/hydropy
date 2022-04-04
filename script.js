@@ -230,7 +230,7 @@ const gameLoop = () => {
 }
 
 const updateLava = (lavaTile, now) => {
-    let timeout = lava.length < 200 ? lavaTile.timeout : Math.max(lavaTile.timeout - (lava.length / 2), 300);
+    let timeout = lava.length < 200 ? lavaTile.timeout : Math.max(lavaTile.timeout - lava.length, 100);
 
     if (now - lavaTile.lastSpread > timeout) {
         lavaTile.lastSpread = now;
