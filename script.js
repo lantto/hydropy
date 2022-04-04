@@ -214,7 +214,7 @@ const gameLoop = () => {
         if (scalePointer > 100) {
             scalePointer = 100;
         }
-        let modScale = 0.999 + ((scalePointer/100) * (0.9997-0.999));
+        let modScale = 0.999 + ((scalePointer/100) * (0.9999-0.999));
         scale = scale * modScale;
     }
 
